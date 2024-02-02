@@ -1,0 +1,10 @@
+#### Just run in command line the following
+###  -- have to be in the Mapped_Data/demultiplexed file path: 
+
+Copy code
+find "Mapped_Data/demultiplexed/" -name "umi_*" -print
+find "Mapped_Data/demultiplexed/" -name "*s_R2*" -print
+
+
+find "Mapped_Data/demultiplexed/" -name "umi_*" -delete
+find "Mapped_Data/demultiplexed/" -name "*s_R2*" -delete
