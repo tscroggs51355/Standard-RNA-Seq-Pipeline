@@ -14,9 +14,10 @@ if [ ! -f "Mapped_Data/hisat2_out/""$file2"".bam" ]; then
 	module load SAMtools/1.16.1-GCC-11.3.0
 	hisat2 -p 4 --dta -x maize_tran -U "Mapped_Data/hisat2_out/""$file2"".fastq.gz" | samtools view -bS -> "Mapped_Data/hisat2_out/""$file2""_unsorted.bam"
 	
-	
+	module load SAMtools/1.16.1-GCC-11.3.0
 	samtools sort -@ 8 "Mapped_Data/hisat2_out/""$file2""_unsorted.bam" -o "Mapped_Data/hisat2_out/""$file2"".bam"
 	
-	
+	find "Mapped_Data/hisat2_out/" -name "*fastq.gz" -delete
+	find "Mapped_Data/hisat2_out/" -name "*_unsorted.bam" -delete
 fi
 done
