@@ -29,3 +29,6 @@ module load fastp/0.23.2
 fi
 done
 conda deactivate
+
+
+#Make sure to move the CELSeq barcodes beforehand 
